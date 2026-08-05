@@ -324,9 +324,8 @@ ln -sfn "$(pwd)" ~/.gemini/config/plugins/axon
 
 ## Acknowledgements
 
-AXON began with inspiration from the Apache-2.0 licensed
-[`gemini-cli-extensions/conductor`](https://github.com/gemini-cli-extensions/conductor)
-project. We are grateful for that groundwork. AXON is now an Atop Web
+Thanks to the open-source community and the prior work that helped shape early
+thinking around agent-guided development workflows. AXON is an Atop Web
 Technologies project with its own language, roadmap, and direction.
 
 ## License
