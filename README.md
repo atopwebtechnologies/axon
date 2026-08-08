@@ -95,10 +95,13 @@ marketplace catalog at `.claude-plugin/marketplace.json`.
 /plugin install axon@axon
 ```
 
-### Antigravity / Gemini-compatible agents
+### Antigravity
+
+AXON includes an Antigravity-compatible plugin manifest at the repository
+root (`plugin.json`).
 
 ```bash
-agy plugins install https://github.com/atopwebtechnologies/axon
+agy plugin install https://github.com/atopwebtechnologies/axon
 ```
 
 Once AXON is active in any of the above, start in the target project with:
@@ -125,7 +128,7 @@ same way you would the published version:
 | --- | --- | --- |
 | Codex | `codex plugin marketplace add "$(pwd)"` | `codex plugin add axon@axon` |
 | Claude Code | `claude plugin marketplace add ./` | `claude plugin install axon@axon` |
-| Antigravity/Gemini | `mkdir -p ~/.gemini/config/plugins/ && ln -sfn "$(pwd)" ~/.gemini/config/plugins/axon` | (the symlink is the install step) |
+| Antigravity | `mkdir -p ~/.gemini/config/plugins/ && ln -sfn "$(pwd)" ~/.gemini/config/plugins/axon` | (the symlink is the install step) |
 
 For any other agent that reads a workspace-level plugins folder:
 
