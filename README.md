@@ -71,6 +71,37 @@ axon/
 
 ## Installation
 
+AXON ships plugin manifests for Claude Code, Codex, and Antigravity/Gemini
+agents, all from this one repository.
+
+### Claude Code
+
+AXON ships a plugin manifest at `.claude-plugin/plugin.json` and a
+marketplace catalog at `.claude-plugin/marketplace.json`.
+
+Add the marketplace and install the plugin:
+
+```text
+/plugin marketplace add atopwebtechnologies/axon
+/plugin install axon@axon
+```
+
+For local development, clone the repo and add the local checkout as a
+marketplace:
+
+```bash
+git clone https://github.com/atopwebtechnologies/axon.git
+cd axon
+claude plugin marketplace add ./
+claude plugin install axon@axon
+```
+
+Validate the manifest after making changes:
+
+```bash
+claude plugin validate .
+```
+
 ### Codex
 
 AXON includes a Codex-compatible plugin manifest at
@@ -93,19 +124,34 @@ codex plugin marketplace add "$(pwd)"
 codex plugin add axon@axon
 ```
 
-Once AXON is active, start in the target project with:
+### Antigravity / Gemini-compatible agents
 
-```text
-/axon:axon-initialize
+```bash
+agy plugins install https://github.com/atopwebtechnologies/axon
+```
+
+For local development:
+
+```bash
+git clone https://github.com/atopwebtechnologies/axon.git
+cd axon
+mkdir -p ~/.gemini/config/plugins/
+ln -sfn "$(pwd)" ~/.gemini/config/plugins/axon
 ```
 
 ### Quick Local Link
 
-For workspace-level testing in compatible agents:
+For workspace-level testing in other compatible agents:
 
 ```bash
 mkdir -p .agents/plugins/
 ln -sfn /absolute/path/to/axon .agents/plugins/axon
+```
+
+Once AXON is active in any of the above, start in the target project with:
+
+```text
+/axon:axon-initialize
 ```
 
 ## Tutorial: Greenfield Build
@@ -296,30 +342,6 @@ rules/
   axon_antigravity.md
 .claude-plugin/
 .codex-plugin/
-```
-
-## Other Agent Setups
-
-### Antigravity / Gemini-compatible agents
-
-```bash
-agy plugins install https://github.com/atopwebtechnologies/axon
-```
-
-For local development:
-
-```bash
-git clone https://github.com/atopwebtechnologies/axon.git
-cd axon
-mkdir -p ~/.gemini/config/plugins/
-ln -sfn "$(pwd)" ~/.gemini/config/plugins/axon
-```
-
-### Claude Code
-
-```text
-/plugin marketplace add atopwebtechnologies/axon
-/plugin install axon
 ```
 
 ## Acknowledgements

@@ -1,8 +1,10 @@
 {
   "name": "axon",
   "owner": {
-    "name": "Atop Web Technologies"
+    "name": "Atop Web Technologies",
+    "url": "https://github.com/atopwebtechnologies"
   },
+  "description": "Spec-driven development skills for high-performance software teams.",
   "plugins": [
     {
       "name": "axon",

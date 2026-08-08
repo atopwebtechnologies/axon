@@ -1,0 +1,19 @@
+{
+  "name": "axon",
+  "description": "Spec-driven development skills for high-performance software teams.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Atop Web Technologies",
+    "url": "https://github.com/atopwebtechnologies"
+  },
+  "homepage": "https://github.com/atopwebtechnologies/axon",
+  "repository": "https://github.com/atopwebtechnologies/axon",
+  "license": "Apache-2.0",
+  "keywords": [
+    "spec-driven-development",
+    "ai-agents",
+    "workflow",
+    "developer-tools",
+    "atop"
+  ]
+}

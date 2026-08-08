@@ -27,9 +27,10 @@ useful across coding agents and IDE environments.
 Before opening a pull request, validate JSON manifests and any edited skills.
 
 ```bash
-python3 -m json.tool plugin.json >/dev/null
+python3 -m json.tool .claude-plugin/plugin.json >/dev/null
 python3 -m json.tool .claude-plugin/marketplace.json >/dev/null
 python3 -m json.tool .codex-plugin/plugin.json >/dev/null
+claude plugin validate .
 ```
 
 If you have access to Codex skill validation scripts, also run the plugin and
