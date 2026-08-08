@@ -71,57 +71,28 @@ axon/
 
 ## Installation
 
-AXON ships plugin manifests for Claude Code, Codex, and Antigravity/Gemini
-agents, all from this one repository.
-
-### Claude Code
-
-AXON ships a plugin manifest at `.claude-plugin/plugin.json` and a
-marketplace catalog at `.claude-plugin/marketplace.json`.
-
-Add the marketplace and install the plugin:
-
-```text
-/plugin marketplace add atopwebtechnologies/axon
-/plugin install axon@axon
-```
-
-For local development, clone the repo and add the local checkout as a
-marketplace:
-
-```bash
-git clone https://github.com/atopwebtechnologies/axon.git
-cd axon
-claude plugin marketplace add ./
-claude plugin install axon@axon
-```
-
-Validate the manifest after making changes:
-
-```bash
-claude plugin validate .
-```
+AXON ships plugin manifests for Codex, Claude Code, and Antigravity/Gemini
+agents, all from this one repository. Each agent installs AXON straight from
+GitHub — no local clone required.
 
 ### Codex
 
 AXON includes a Codex-compatible plugin manifest at
 `.codex-plugin/plugin.json`.
 
-Install AXON from GitHub as a Codex plugin marketplace:
-
 ```bash
 codex plugin marketplace add atopwebtechnologies/axon --ref main
 codex plugin add axon@axon
 ```
 
-For local development, clone the repo and add the local checkout as a
-marketplace:
+### Claude Code
 
-```bash
-git clone https://github.com/atopwebtechnologies/axon.git
-cd axon
-codex plugin marketplace add "$(pwd)"
-codex plugin add axon@axon
+AXON ships a plugin manifest at `.claude-plugin/plugin.json` and a
+marketplace catalog at `.claude-plugin/marketplace.json`.
+
+```text
+/plugin marketplace add atopwebtechnologies/axon
+/plugin install axon@axon
 ```
 
 ### Antigravity / Gemini-compatible agents
@@ -130,28 +101,43 @@ codex plugin add axon@axon
 agy plugins install https://github.com/atopwebtechnologies/axon
 ```
 
-For local development:
-
-```bash
-git clone https://github.com/atopwebtechnologies/axon.git
-cd axon
-mkdir -p ~/.gemini/config/plugins/
-ln -sfn "$(pwd)" ~/.gemini/config/plugins/axon
-```
-
-### Quick Local Link
-
-For workspace-level testing in other compatible agents:
-
-```bash
-mkdir -p .agents/plugins/
-ln -sfn /absolute/path/to/axon .agents/plugins/axon
-```
-
 Once AXON is active in any of the above, start in the target project with:
 
 ```text
 /axon:axon-initialize
+```
+
+### Contributing: testing a local checkout
+
+If you're working on AXON itself, point your agent at your local clone
+instead of GitHub so you can test changes before they're published. Clone the
+repo first:
+
+```bash
+git clone https://github.com/atopwebtechnologies/axon.git
+cd axon
+```
+
+Then, from inside that directory, add it as a marketplace and install it the
+same way you would the published version:
+
+| Agent | Add local marketplace | Install |
+| --- | --- | --- |
+| Codex | `codex plugin marketplace add "$(pwd)"` | `codex plugin add axon@axon` |
+| Claude Code | `claude plugin marketplace add ./` | `claude plugin install axon@axon` |
+| Antigravity/Gemini | `mkdir -p ~/.gemini/config/plugins/ && ln -sfn "$(pwd)" ~/.gemini/config/plugins/axon` | (the symlink is the install step) |
+
+For any other agent that reads a workspace-level plugins folder:
+
+```bash
+mkdir -p .agents/plugins/
+ln -sfn "$(pwd)" .agents/plugins/axon
+```
+
+Before opening a pull request, validate the manifests:
+
+```bash
+claude plugin validate .
 ```
 
 ## Tutorial: Greenfield Build
