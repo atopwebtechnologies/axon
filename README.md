@@ -110,6 +110,9 @@ Once AXON is active in any of the above, start in the target project with:
 /axon:axon-initialize
 ```
 
+If your agent doesn't show `/axon:axon-initialize` right after installing,
+restart the coding agent or IDE session and it will pick up the new plugin.
+
 ### Contributing: testing a local checkout
 
 If you're working on AXON itself, point your agent at your local clone
@@ -142,6 +145,14 @@ Before opening a pull request, validate the manifests:
 ```bash
 claude plugin validate .
 ```
+
+## Codelab: Build a Microbank with AXON
+
+Learn how to use AXON to build a predictable, spec-driven microbank
+application step by step, from greenfield project context to
+implementation, inspection, recovery, and brownfield iteration.
+
+[Build a Microbank with AXON](https://codelabs.atopwebtech.com/codelabs/build-a-microbank-with-axon)
 
 ## Tutorial: Greenfield Build
 
