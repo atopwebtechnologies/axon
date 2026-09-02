@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+/* ==========================================================================
+   Scandinavian Design System Tokens & Base Reset
+   ========================================================================== */
+
+:root {
+  /* Color Palette */
+  --bg-primary: #FFFAF3;
+  --bg-secondary: #FFF2DB;
+  --bg-highlight: #FFE5BF;
+  --accent-crimson: #F62440;
+  --accent-crimson-hover: #D91A34;
+  --accent-crimson-light: rgba(246, 36, 64, 0.08);
+  
+  --text-primary: #1E1E1E;
+  --text-secondary: #5A5A5A;
+  --text-muted: #888888;
+  --text-inverse: #FFFFFF;
+  
+  --border-subtle: rgba(30, 30, 30, 0.08);
+  --border-medium: rgba(30, 30, 30, 0.16);
+  --border-accent: rgba(246, 36, 64, 0.3);
+  
+  --glass-bg: rgba(255, 250, 243, 0.85);
+  --glass-border: rgba(255, 242, 219, 0.6);
+  
+  /* Shadows & Elevation */
+  --shadow-sm: 0 2px 8px rgba(30, 30, 30, 0.03);
+  --shadow-md: 0 8px 30px rgba(30, 30, 30, 0.05);
+  --shadow-lg: 0 16px 40px rgba(30, 30, 30, 0.08);
+  --shadow-crimson: 0 8px 24px rgba(246, 36, 64, 0.25);
+  
+  /* Typography */
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+  
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  
+  /* Layout */
+  --max-width: 1200px;
+  --header-height: 80px;
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--accent-crimson);
+  color: var(--text-inverse);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-highlight);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-crimson);
+}
+
+/* Typography Utilities */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent-crimson);
+  margin-bottom: 12px;
+}
+
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-crimson);
+  border-radius: 50%;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  max-width: 600px;
+  color: var(--text-secondary);
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+/* Button & Interactive Components */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: var(--accent-crimson);
+  color: var(--text-inverse);
+  box-shadow: var(--shadow-crimson);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-crimson-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(246, 36, 64, 0.35);
+}
+
+.btn-secondary {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border-color: var(--border-medium);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-highlight);
+  transform: translateY(-2px);
+  border-color: var(--text-primary);
+}
+
+/* Focus Ring Accessibility */
+:focus-visible {
+  outline: 2px solid var(--accent-crimson);
+  outline-offset: 4px;
+}
