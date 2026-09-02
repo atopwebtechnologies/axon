@@ -1,0 +1,88 @@
+/* AccountOverview.module.css */
+
+/* ── No account state ────────────────────────────────────────────── */
+.noAccount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-12) var(--space-3);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-xl);
+  border: 2px dashed var(--color-border);
+  text-align: center;
+}
+
+.noAccountContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  max-width: 360px;
+}
+
+.noAccountTitle {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.noAccountText {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--space-1);
+}
+
+/* ── Balance state ───────────────────────────────────────────────── */
+.overview {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-6);
+  background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-accent-light) 100%);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+}
+
+.balanceLabel {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.balance {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  line-height: 1;
+}
+
+.currency {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  align-self: flex-start;
+  margin-top: 6px;
+}
+
+.amount {
+  font-family: var(--font-mono);
+  font-size: clamp(3rem, 7vw, 4.5rem);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.accountMeta {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+.accountMeta strong {
+  color: var(--color-text-primary);
+}

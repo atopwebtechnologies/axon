@@ -1,0 +1,81 @@
+/* Navbar.module.css */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--navbar-height);
+  /* Start transparent */
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color var(--transition-slow),
+    border-color var(--transition-slow),
+    box-shadow var(--transition-slow);
+}
+
+/* Scrolled state — solid white with subtle shadow */
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom-color: var(--color-border);
+  box-shadow: 0 1px 16px rgba(13, 31, 23, 0.06);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  text-decoration: none;
+}
+
+.logoMark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: var(--color-accent);
+  color: #ffffff;
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.125rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.logoText {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+}
+
+/* CTA buttons area */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+@media (max-width: 480px) {
+  .logoText {
+    display: none;
+  }
+}

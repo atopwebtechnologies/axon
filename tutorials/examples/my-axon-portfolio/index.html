@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scandinavian Frontend Developer Portfolio</title>
+  <meta name="description" content="A premium, classy, Scandinavian-styled frontend web developer portfolio showcasing high-impact projects, design systems, skills, and experience." />
+  
+  <link rel="stylesheet" href="./src/styles/main.css" />
+  <link rel="stylesheet" href="./src/styles/components.css" />
+</head>
+<body>
+
+  <!-- Site Header & Navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="brand-logo">
+        NORDIC<span>.</span>DEV
+      </a>
+      
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#skills" class="nav-link">Skills & Experience</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <div class="availability-badge">
+          <span class="pulse-dot"></span> Available for Q4 Projects
+        </div>
+        
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="section-label">Frontend Architect & Engineer</span>
+          <h1>Crafting <span>Classy</span> Web Interfaces & Systems</h1>
+          <p class="hero-bio">
+            Specializing in high-performance frontend architecture, responsive design systems, clean typography, and Scandinavian minimalism with modern web technologies.
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">Explore Featured Work &rarr;</a>
+            <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="stat-item">
+            <div class="stat-number">8+</div>
+            <div class="stat-label">Years Crafting Frontend Systems</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">40+</div>
+            <div class="stat-label">Web Apps & Open Source Libraries</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">99.8%</div>
+            <div class="stat-label">Client & Stakeholder Satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Showcase Section -->
+    <section class="section-padding" id="projects" style="background-color: var(--bg-primary);">
+      <div class="container">
+        <div style="text-align: center;">
+          <span class="section-label">Selected Portfolio Work</span>
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-subtitle" style="margin: 0 auto;">
+            Explore a curated collection of frontend applications, bespoke design systems, and high-throughput web components.
+          </p>
+        </div>
+
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">All Work</button>
+          <button class="filter-btn" data-filter="UI Systems">UI Systems</button>
+          <button class="filter-btn" data-filter="Web Apps">Web Applications</button>
+          <button class="filter-btn" data-filter="Components">Components</button>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+          <!-- Dynamic rendering via main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills & Experience Section -->
+    <section class="section-padding" id="skills" style="background-color: var(--bg-primary); border-top: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 60px;">
+          <span class="section-label">Technical Expertise</span>
+          <h2 class="section-title">Skills & Experience</h2>
+          <p class="section-subtitle" style="margin: 0 auto;">
+            A holistic breakdown of frontend engineering domain mastery and career milestones.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Frontend Architecture</h3>
+            <p>Modern JS (ES6+), State Management, Performance Optimization, Modular CSS Architecture, CSS Grid & Custom Properties.</p>
+          </div>
+          <div class="skill-card">
+            <h3>Design Systems & UI</h3>
+            <p>Component Libraries, Scandinavian Minimalist Aesthetics, Micro-Interactions, Fluid Typography, Responsive Breakpoints.</p>
+          </div>
+          <div class="skill-card">
+            <h3>Performance & Quality</h3>
+            <p>Core Web Vitals Optimization, Lighthouse Auditing, WCAG AAA Accessibility (A11y), Cross-Browser Compatibility.</p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2023 — Present</div>
+            <h3 class="timeline-title">Principal Frontend Engineer</h3>
+            <p>Architecting high-scale frontend design systems, web performance initiatives, and component platforms for global clients.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2020 — 2023</div>
+            <h3 class="timeline-title">Senior Web Developer</h3>
+            <p>Led UI engineering teams building interactive web applications, real-time analytics dashboards, and responsive web assets.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2018 — 2020</div>
+            <h3 class="timeline-title">UI/UX & Frontend Developer</h3>
+            <p>Crafted custom websites, portfolio platforms, and client design tokens focusing on speed, elegance, and clarity.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section-padding" id="contact" style="background-color: var(--bg-primary); border-top: 1px solid var(--border-subtle);">
+      <div class="container contact-grid">
+        <div>
+          <span class="section-label">Start a Conversation</span>
+          <h2 class="section-title">Let's Build Something Exceptional</h2>
+          <p style="font-size: 1.125rem; margin-bottom: 32px; color: var(--text-secondary);">
+            Whether you have an ambitious new project, require design system consultation, or want to discuss frontend leadership opportunities, feel free to reach out.
+          </p>
+          <div style="margin-bottom: 24px;">
+            <div style="font-size: 0.875rem; font-weight: 700; text-transform: uppercase; color: var(--accent-crimson); margin-bottom: 6px;">Direct Email</div>
+            <div style="font-size: 1.25rem; font-weight: 600; color: var(--text-primary);">hello@nordicdev.example</div>
+          </div>
+          <div>
+            <div style="font-size: 0.875rem; font-weight: 700; text-transform: uppercase; color: var(--accent-crimson); margin-bottom: 6px;">Location</div>
+            <div style="font-size: 1.25rem; font-weight: 600; color: var(--text-primary);">Stockholm, Sweden / Remote</div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <h3 style="font-size: 1.5rem; margin-bottom: 24px;">Send Message</h3>
+          
+          <div class="form-group">
+            <label for="name" class="form-label">Full Name *</label>
+            <input type="text" id="name" class="form-input" placeholder="e.g. Astrid Lindgren" required />
+            <div class="error-message">Name is required</div>
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">Email Address *</label>
+            <input type="email" id="email" class="form-input" placeholder="e.g. astrid@example.com" required />
+            <div class="error-message">Please enter a valid email</div>
+          </div>
+
+          <div class="form-group">
+            <label for="message" class="form-label">Project Details & Message *</label>
+            <textarea id="message" class="form-textarea" rows="4" placeholder="Describe your project, timeline, or inquiry..." required></textarea>
+            <div class="error-message">Message must be at least 10 characters</div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Message &rarr;</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer style="padding: 40px 0; border-top: 1px solid var(--border-subtle); text-align: center; font-size: 0.875rem; color: var(--text-secondary);">
+    <div class="container">
+      <p>&copy; 2026 Nordic Dev Studio. Built with Scandinavian Minimalist Principles & AXON SDD.</p>
+    </div>
+  </footer>
+
+  <!-- Project Detail Modal -->
+  <div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close dialog">
+        &times;
+      </button>
+      <div id="modalBody">
+        <!-- Modal content dynamically injected -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toastNotification" role="status" aria-live="polite">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F62440" stroke-width="2.5">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span id="toastText">Message sent successfully!</span>
+  </div>
+
+  <script type="module" src="./src/js/main.js"></script>
+</body>
+</html>

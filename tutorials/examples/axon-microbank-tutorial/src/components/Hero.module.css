@@ -1,0 +1,147 @@
+/* Hero.module.css */
+
+/* ── Full-bleed hero section ─────────────────────────────────────── */
+.hero {
+  position: relative;
+  width: 100%;
+  /* Subtract navbar height so hero fills exactly the first viewport */
+  min-height: calc(100svh - var(--navbar-height));
+  margin-top: var(--navbar-height);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Background image — edge-to-edge */
+.background {
+  position: absolute;
+  inset: 0;
+  background-image: url('/hero-bg.jpg');
+  background-size: cover;
+  background-position: center right;
+  z-index: 0;
+}
+
+/* Subtle left-side gradient overlay so text is always readable */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(255, 255, 255, 0.82) 45%,
+    rgba(255, 255, 255, 0.0) 80%
+  );
+  z-index: 1;
+}
+
+/* ── Content column ──────────────────────────────────────────────── */
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  /* Stagger targets — hidden by default, revealed by .visible class */
+}
+
+/* ── Entrance animation ──────────────────────────────────────────── */
+/* All children start invisible and slightly translated down */
+.brandEyebrow,
+.headline,
+.subtext,
+.cta {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* When .visible is added to the section, stagger each child */
+.hero.visible .brandEyebrow {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0ms;
+}
+.hero.visible .headline {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 120ms;
+}
+.hero.visible .subtext {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 240ms;
+}
+.hero.visible .cta {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 360ms;
+}
+
+/* ── Brand eyebrow ───────────────────────────────────────────────── */
+.brandEyebrow {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+/* ── Headline ────────────────────────────────────────────────────── */
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 6.5vw, 4.75rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--color-text-primary);
+  max-width: 13ch;
+}
+
+.accent {
+  color: var(--color-accent);
+}
+
+/* ── Subtext ─────────────────────────────────────────────────────── */
+.subtext {
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  max-width: 42ch;
+}
+
+/* ── CTA group ───────────────────────────────────────────────────── */
+.cta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero {
+    min-height: calc(100svh - var(--navbar-height));
+  }
+
+  .overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.94) 0%,
+      rgba(255, 255, 255, 0.88) 60%,
+      rgba(255, 255, 255, 0.60) 100%
+    );
+  }
+
+  .content {
+    padding: var(--space-8) var(--space-3);
+    gap: var(--space-2);
+  }
+}

@@ -1,0 +1,102 @@
+/* FeatureCards.module.css */
+
+.section {
+  padding: var(--space-16) 0;
+  background-color: var(--color-background);
+}
+
+/* ── Section header ──────────────────────────────────────────────── */
+.header {
+  margin-bottom: var(--space-8);
+  max-width: 52ch;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.subtext {
+  font-size: 1.0625rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* ── Feature grid ────────────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+  list-style: none;
+  padding: 0;
+}
+
+/* ── Individual feature block ────────────────────────────────────── */
+.feature {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4) 0;
+  /* Hover lift: axon-compose interaction thesis */
+  transform: translateY(0);
+  transition: transform var(--transition-base);
+  cursor: default;
+}
+
+.feature:hover {
+  transform: translateY(-4px);
+}
+
+/* Accent bar — thickens on hover */
+.bar {
+  width: 32px;
+  height: 3px;
+  background-color: var(--color-accent);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-base);
+}
+
+.feature:hover .bar {
+  width: 48px;
+}
+
+/* Icon */
+.icon {
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.description {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: var(--space-12) 0;
+  }
+}

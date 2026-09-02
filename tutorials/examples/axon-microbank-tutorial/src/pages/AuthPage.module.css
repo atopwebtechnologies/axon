@@ -1,0 +1,127 @@
+/* AuthPage.module.css — Shared styles for SignUp and Login pages */
+
+/* Full-page centered layout */
+.page {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-surface);
+  padding: var(--space-3);
+}
+
+/* Auth card — minimal, focused */
+.card {
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+
+  /* Entrance: fade up from below */
+  animation: authCardIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes authCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Brand mark inside card */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.logoMark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: var(--color-accent);
+  color: #ffffff;
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.logoText {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+}
+
+/* Heading block */
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--color-text-primary);
+}
+
+.subtitle {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Error banner */
+.errorBanner {
+  padding: var(--space-2);
+  background-color: var(--color-error-bg);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  border-radius: var(--radius-md);
+  color: var(--color-error);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Switch link */
+.switchLink {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.switchLink a {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.switchLink a:hover {
+  color: var(--color-accent-hover);
+}

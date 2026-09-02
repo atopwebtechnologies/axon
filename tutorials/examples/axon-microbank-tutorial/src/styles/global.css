@@ -1,0 +1,298 @@
+/* =============================================================================
+   MICROBANK DESIGN SYSTEM — Global CSS Tokens & Base Styles
+   All components reference these variables. Never use raw hex values in
+   component files — always use a token from this file.
+   ============================================================================= */
+
+/* --- Design Tokens --- */
+:root {
+  /* Color — Brand Palette */
+  --color-background: #ffffff;
+  --color-surface: #f7f9f8;       /* Very light green-tinted surface */
+  --color-text-primary: #0d1f17;  /* Near-black with green undertone */
+  --color-text-muted: #5c7268;    /* Muted green-grey for supporting text */
+  --color-accent: #1ba94c;        /* Brand green — CTAs, active states */
+  --color-accent-hover: #178c3e;  /* Darker green on hover */
+  --color-accent-light: #e8f8ee;  /* Very light green tint for backgrounds */
+  --color-border: #e0eae4;        /* Soft green-tinted border */
+  --color-error: #dc2626;         /* Error/danger red */
+  --color-error-bg: #fef2f2;      /* Light red background for error states */
+  --color-footer-dark: #0a1a10;   /* Near-black for footer gradient start */
+
+  /* Typography */
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Spacing */
+  --space-unit: 8px;
+  --space-1: calc(var(--space-unit) * 1);   /* 8px */
+  --space-2: calc(var(--space-unit) * 2);   /* 16px */
+  --space-3: calc(var(--space-unit) * 3);   /* 24px */
+  --space-4: calc(var(--space-unit) * 4);   /* 32px */
+  --space-6: calc(var(--space-unit) * 6);   /* 48px */
+  --space-8: calc(var(--space-unit) * 8);   /* 64px */
+  --space-12: calc(var(--space-unit) * 12); /* 96px */
+  --space-16: calc(var(--space-unit) * 16); /* 128px */
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(13, 31, 23, 0.08), 0 1px 2px rgba(13, 31, 23, 0.04);
+  --shadow-md: 0 4px 6px rgba(13, 31, 23, 0.07), 0 2px 4px rgba(13, 31, 23, 0.05);
+  --shadow-lg: 0 10px 15px rgba(13, 31, 23, 0.08), 0 4px 6px rgba(13, 31, 23, 0.04);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* Layout */
+  --max-width: 1200px;
+  --navbar-height: 72px;
+}
+
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+}
+
+/* --- Typography Scale --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+/* Display — hero headline */
+.text-display {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+/* Headline — section h2 */
+.text-headline {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Subheading — feature titles */
+.text-subheading {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Body */
+.text-body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+/* Caption */
+.text-caption {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+/* Mono — balance amounts, financial figures */
+.text-mono {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* --- Layout Utilities --- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+}
+
+/* --- Link Reset --- */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* --- Form Base --- */
+input, button, textarea, select {
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* --- Visually Hidden (Accessibility) --- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* --- Shared Button Styles --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* Primary Button */
+.btn-primary {
+  background-color: var(--color-accent);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-hover);
+  box-shadow: var(--shadow-md);
+}
+
+/* Outline Button */
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border: 1.5px solid var(--color-border);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background-color: var(--color-accent-light);
+}
+
+/* Ghost Button */
+.btn-ghost {
+  background-color: transparent;
+  color: var(--color-text-muted);
+}
+
+.btn-ghost:hover {
+  color: var(--color-text-primary);
+  background-color: var(--color-surface);
+}
+
+/* --- Shared Form Field Styles --- */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.form-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-size: 0.9375rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(27, 169, 76, 0.12);
+}
+
+.form-input.error {
+  border-color: var(--color-error);
+}
+
+.form-input.error:focus {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+}
+
+.form-error {
+  font-size: 0.8125rem;
+  color: var(--color-error);
+  font-weight: 500;
+}
+
+/* --- Shared Card Style --- */
+.card {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+}

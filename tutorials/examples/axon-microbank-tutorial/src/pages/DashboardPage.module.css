@@ -1,0 +1,83 @@
+/* DashboardPage.module.css */
+
+.page {
+  min-height: 100svh;
+  background-color: var(--color-background);
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  height: var(--navbar-height);
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-background);
+}
+
+.headerInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.logoMark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: var(--color-accent);
+  color: #ffffff;
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.logoText {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--color-text-primary);
+}
+
+.userActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.welcomeText {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.welcomeText strong {
+  color: var(--color-text-primary);
+}
+
+.main {
+  padding: var(--space-6) var(--space-3) var(--space-12);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  flex: 1;
+}
+
+.actionsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+@media (max-width: 900px) {
+  .actionsGrid {
+    grid-template-columns: 1fr;
+  }
+}
